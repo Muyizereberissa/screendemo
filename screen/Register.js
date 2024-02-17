@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Image, Text, TouchableOpacity} from 'react-native';
+import { StyleSheet, View, Image, Text, TouchableOpacity, ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -12,6 +12,7 @@ import React from 'react';
 
 export const Register =(navigation)=> {
   return (
+    <ScrollView>
     <View style={styles.container}>
       <View style={{ alignItems: 'center', justifyContent: 'center',}}>
         <Image source={require('../assets/cutie.jpeg')} style={styles.image}/>
@@ -49,6 +50,7 @@ export const Register =(navigation)=> {
 
      
     </View>
+    </ScrollView>
   );
 };
 
@@ -59,6 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f2f2f2',
     // alignItems: 'center',
     // justifyContent: 'center',
+    
   },
 
   icons:{

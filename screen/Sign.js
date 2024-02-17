@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Octicons from 'react-native-vector-icons/Octicons';
-import { Text, View,Image, StyleSheet, TouchableOpacity, Alert } from "react-native";
+import { Text, View,Image, StyleSheet, TouchableOpacity, Alert, ScrollView } from "react-native";
 import { TextInput } from "react-native-paper";
 import { Icon } from "react-native-elements";
 import { AntDesign } from "react-native-vector-icons";
@@ -27,6 +27,7 @@ const Sign = ({navigation}) => {
     };
 
     return (
+        <ScrollView>
         <View style={styles.container}>
             <View style={{ marginTop: 50 }}>
                 <Image source={require('../assets/squarepants.jpeg')} />
@@ -71,6 +72,7 @@ const Sign = ({navigation}) => {
                 <Icon name="apple" size={30} color="black" style={{ borderWidth: 1, borderColor: 'white', borderRadius: 80, padding: 10, backgroundColor: '#EEF5FF', marginRight: 30 }} />
             </View>
         </View>
+        </ScrollView>
     );
 };
 
@@ -79,6 +81,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fdec4d2',
       alignItems: 'center',
       justifyContent: 'center',
+      marginTop: 0
     },
 });
 

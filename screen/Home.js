@@ -13,7 +13,7 @@ export default Home=() => {
             <View style={{backgroundColor: '#EFECF7',width: '100%',height: 'auto',paddingHorizontal: '5%', marginTop: '30%'}}>
                 <View>
                     <Text>Home</Text>
-                    <View>
+                    <View style={Styles.vi}>
                         <View>
                             <Image source={require('../assets/arrow.jpeg')}></Image>
                             <Text>Price Alert</Text>
@@ -46,3 +46,4 @@ export default Home=() => {
         </NavigationContainer>
     )
 }
+

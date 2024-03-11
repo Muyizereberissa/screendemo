@@ -6,11 +6,14 @@ import AntDesign from 'react-native-vector-icons/AntDesign'
 import Searchcomp from '../components/Searchcomp'
 import { useEffect, useState } from 'react'
 import Inputcomp from '../components/Inputcomp'
+import YoutubePlayer from 'react-native-youtube-iframe'
 
-const Actionscreen = () => {
+const Actionscreen = ({route}) => {
+
+const movie=route.params
+console.log(route.params)
 
 
-  
   const options = {
     method: 'GET',
     headers: {
@@ -29,8 +32,25 @@ const Actionscreen = () => {
     .then(response => setMovies(response.results))
     .catch(err => console.error(err));
 
+
+    useEffect(() =>{
+      handleplay();
+    },[])
+
+
+
+    const handleplay =()=> {
+
+      fetch(`https://api.themoviedb.org/3/movie/${movie.id}/videos?language=en-US`, options)
+      .then(response => response.json())
+      .then(response =>{setVideoPlay(response.results[0].key)})
+      .catch(err => console.error(err));
+    }
+      
+
   const [searched, setSearched] = useState([])
   const [movies, setMovies] = useState([])
+  const [videoPlay, setVideoPlay] =useState('')
   return (
     
     <View style={styles.container}>
@@ -39,9 +59,14 @@ const Actionscreen = () => {
         <View>
             <Text style={{marginLeft: 20, color: 'white', fontSize: 25}}>Action</Text>
             <View style={{padding: 20}}>
-                <Image source={require('../assets/jumanji.jpeg') } style={{width: 390, height: 250, }}/>
-                <Text style={{marginLeft: 18, color: 'white', fontSize: 20}}>Jumanji: The Next Level</Text>
-                <Text style={{marginLeft: 18,marginRight: 20, color: '#7D7E82', fontSize: 15}}>When the world is under attack from creatures who hunt their human prey by sound, a teenager and her friends must work together to survive.</Text>
+            <YoutubePlayer
+              height={300}
+              // play={playing}
+              videoId={videoPlay}
+              // onChangeState={onStateChange}
+              />
+                <Text style={{marginLeft: 18, color: 'white', fontSize: 20}}>{movie.title}</Text>
+                <Text style={{marginLeft: 18,marginRight: 20, color: '#7D7E82', fontSize: 15}}>{movie.overview}</Text>
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <View style={{width: '40%', marginLeft: 20}}>
@@ -65,7 +90,7 @@ const Actionscreen = () => {
               keyExtractor={item => item.id.toString()}
               ItemSeparatorComponent={() => <View style={styles.separator} />}
               renderItem={({ item }) => (
-                <Searchcomp img={item.poster_path}/>
+                <Searchcomp img={item.poster_path} />
               )}
           />
           </View>

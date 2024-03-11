@@ -2,7 +2,7 @@ import { StyleSheet, Text, View , Image} from 'react-native'
 import React from 'react'
 
 
-const ScreenImages= ({image}) => {
+const ScreenImages= ({image, title}) => {
   return (
     <View>
       <Text style={{color: 'white', fontSize: 20}}>{title}</Text>

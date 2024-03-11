@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View , Image, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
+import * as React from 'react'
 
 const Screen2 = ({navigation}) => {
   return (

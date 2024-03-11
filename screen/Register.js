@@ -27,7 +27,8 @@ export const Register =(navigation)=> {
         <TextInput
         style={{width:'80%', borderRadius:10, marginTop:20, backgroundColor:' #ffffff',border:'none'}}
         label='Email'
-        left={<TextInput.Icon size={15} icon={'mail'} color={'#1ac4a8'} backgroundColor={'#baf5eb'} />}/>
+        left={<TextInput.Icon size={15} icon={'mail'} color={'#1ac4a8'} backgroundColor={'#baf5eb'} 
+        />}/>
 
         <TextInput
         style={{width:'80%', borderRadius:10, marginTop:20, backgroundColor:' #ffffff', border:'none'}}
@@ -46,9 +47,7 @@ export const Register =(navigation)=> {
                 <TouchableOpacity>
                     <Icon name="apple" size={30} color="black" backgroundColor={'white'}/>
                 </TouchableOpacity>
-      </View>
-
-     
+      </View> 
     </View>
     </ScrollView>
   );

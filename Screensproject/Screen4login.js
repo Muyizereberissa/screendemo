@@ -155,8 +155,8 @@ const Screen4login = ({ navigation }) => {
                         <View style={{ height: 40 }}></View>
                         <View style={{ flexDirection: 'row', marginTop: 15, alignItems: 'center', justifyContent: 'center' }}>
                             <Text style={{ color: 'white', fontSize: 15, alignSelf: 'center', marginTop: 15 }}> Don't have an account</Text>
-                            <TouchableOpacity onPress={() => navigation.navigate('Screen3creat')}>
-                                <Text style={{ color: 'orange', fontSize: 15, alignSelf: 'center', marginTop: 15 }}> Sign up</Text>
+                            <TouchableOpacity onPress={() => navigation.navigate('Screen5home')}>
+                                <Text style={{ color: 'orange', fontSize: 15, alignSelf: 'center', marginTop: 15 }}> Log in</Text>
                             </TouchableOpacity>
                         </View>
                     </View>

@@ -65,7 +65,8 @@ function BottomNav() {
         component={DrawerNavigate}
         options={{
           tabBarIcon: () => (
-            <AntDesign name="profile" size={20} color='color' />
+            <AntDesign name="profile" size={20} color='color'
+             />
           ),
         }}
       />

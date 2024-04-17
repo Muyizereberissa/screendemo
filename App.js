@@ -98,7 +98,6 @@ export default function App() {
           <Stack.Screen name="MovieDetails" component={MovieDetails} />
           <Stack.Screen name="Actionscreen" component={Actionscreen} />
           <Stack.Screen name="Profile" component={Profile}/>
-          {/* <Stack.Screen name="Profile" component={DrawerNavigate} /> */}
         </Stack.Navigator>
       </NavigationContainer>
       </ThemeProvider>
